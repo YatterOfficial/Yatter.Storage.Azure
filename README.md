@@ -1,0 +1,1 @@
+# Yatter.Storage.Azure
