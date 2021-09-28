@@ -9,10 +9,14 @@
     <None Remove="Newtonsoft.Json" />
     <None Remove="Azure.Core" />
     <None Remove="Microsoft.Azure.Storage.Blob" />
+    <None Remove="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.2.3" />
     <PackageReference Include="Azure.Storage.Blobs" Version="12.10.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 </Project>

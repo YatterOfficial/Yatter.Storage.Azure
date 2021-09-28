@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Yatter.Storage.Azure
+namespace Yatter.Storage.Azure.Exceptions
 {
     public class MissingConnectionStringException : Exception
     {

@@ -18,6 +18,10 @@ namespace Yatter.Storage.Azure
         /// </summary>
         public string BlobPath { get; protected set; }
         /// <summary>
+        /// When uploading, the content to upload. BlobContent can be string.Empty if an empty blob is intended.
+        /// </summary>
+        public string BlobContent { get; set; }
+        /// <summary>
         /// Override to access the internal BlobClient
         /// </summary>
         /// <param name="client">Azure.Storage.Blobs.BlobClient</param>
