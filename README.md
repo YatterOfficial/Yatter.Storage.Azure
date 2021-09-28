@@ -53,7 +53,7 @@ Minimal Example TResponse class
     }
 ```
 
-Minimal example TRequest class
+Minimal Example TRequest class
 
 ```
     public sealed class BlobRequest : RequestBase
@@ -74,4 +74,62 @@ Minimal example TRequest class
         }
     }
 ```
+
+Advanced Example of TResponse Access to Underlying Azure objects
+
+```
+    public class BlobResponse : ResponseBase
+    {
+        public BlobResponse()
+        {
+        }
+
+        public override void AddBlobDownloadResult(BlobDownloadResult blobDownloadResult)
+        {
+            base.AddBlobDownloadResult(blobDownloadResult);
+        }
+    }
+```
+
+Advanced Example of TRequest Access to Underlying Azure objects
+
+```
+    public sealed class BlobRequest : RequestBase
+    {
+        public void SetConnectionString(string connectionString)
+        {
+            ConnectionString = connectionString;
+        }
+
+        public void SetContainerName(string name)
+        {
+            ContainerName = name;
+        }
+
+        public void SetBlobPath(string path)
+        {
+            BlobPath = path;
+        }
+        
+        public override void AddBlobClient(BlobClient client)
+        {
+            // Do something with client here!
+            base.AddBlobClient(client);
+        }
+
+        public override void AddBlobContainerClient(BlobContainerClient client)
+        {
+            // Do something with client here!
+            base.AddBlobContainerClient(client);
+        }
+
+        public override void AddBlobServiceClient(BlobServiceClient client)
+        {
+            // Do something with client here!
+            base.AddBlobServiceClient(client);
+        }
+    }
+```
+
+
 
