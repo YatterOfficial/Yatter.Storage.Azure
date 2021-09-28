@@ -6,13 +6,13 @@ using Azure.Storage.Blobs.Models;
 
 namespace Yatter.Storage.Azure
 {
-    public class BlobManager
+    public class ResponsiveBlobManager
     {
         private BlobServiceClient blobServiceClient;
 
         string GetRequestObjectFullName<T>(T instance) { return typeof(T).FullName; }
 
-        public BlobManager()
+        public ResponsiveBlobManager()
         {
         }
 
