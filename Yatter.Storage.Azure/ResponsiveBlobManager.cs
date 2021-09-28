@@ -50,6 +50,17 @@ namespace Yatter.Storage.Azure
 
                 string containerName = request.ContainerName;
 
+                if(string.IsNullOrEmpty(containerName))
+                {
+                    throw new ContainerNameNotSpecifiedException(string.Format("TRequest object does not have a ContainerName specified in {0}", this.GetType()));
+                }
+
+                string blobPath = request.BlobPath;
+                if(string.IsNullOrEmpty(blobPath))
+                {
+                    throw new BlobPathNotSpecifiedException(string.Format("TRequest object does not have a BlobPath specified in {0}", this.GetType()));
+                }
+
                 BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
 
                 var containerExists = await containerClient.ExistsAsync();
@@ -70,7 +81,7 @@ namespace Yatter.Storage.Azure
 
                 if(!blobExists)
                 {
-                    throw new BlobDoesNotExistException(string.Format("Container does not exist in {0}", this.GetType()));
+                    throw new BlobDoesNotExistException(string.Format("Blob does not exist in {0}", this.GetType()));
                 }
 
                 if (typeof(TRequest).GetTypeInfo().GetDeclaredMethod("AddBlobClient") != null)
@@ -116,13 +127,23 @@ namespace Yatter.Storage.Azure
                 }
 
                 blobServiceClient = new BlobServiceClient(request.ConnectionString);
+                string containerName = request.ContainerName;
+
+                if (string.IsNullOrEmpty(containerName))
+                {
+                    throw new ContainerNameNotSpecifiedException(string.Format("TRequest object does not have a ContainerName specified in {0}", this.GetType()));
+                }
+
+                string blobPath = request.BlobPath;
+                if (string.IsNullOrEmpty(blobPath))
+                {
+                    throw new BlobPathNotSpecifiedException(string.Format("TRequest object does not have a BlobPath specified in {0}", this.GetType()));
+                }
 
                 if (typeof(TRequest).GetTypeInfo().GetDeclaredMethod("AddBlobServiceClient") != null)
                 {
                     request.AddBlobServiceClient(blobServiceClient);
                 }
-
-                string containerName = request.ContainerName;
 
                 BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
 
@@ -190,12 +211,23 @@ namespace Yatter.Storage.Azure
 
                 blobServiceClient = new BlobServiceClient(request.ConnectionString);
 
+                string containerName = request.ContainerName;
+
+                if (string.IsNullOrEmpty(containerName))
+                {
+                    throw new ContainerNameNotSpecifiedException(string.Format("TRequest object does not have a ContainerName specified in {0}", this.GetType()));
+                }
+
+                string blobPath = request.BlobPath;
+                if (string.IsNullOrEmpty(blobPath))
+                {
+                    throw new BlobPathNotSpecifiedException(string.Format("TRequest object does not have a BlobPath specified in {0}", this.GetType()));
+                }
+
                 if (typeof(TRequest).GetTypeInfo().GetDeclaredMethod("AddBlobServiceClient") != null)
                 {
                     request.AddBlobServiceClient(blobServiceClient);
                 }
-
-                string containerName = request.ContainerName;
 
                 BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
 
@@ -264,12 +296,23 @@ namespace Yatter.Storage.Azure
 
                 blobServiceClient = new BlobServiceClient(request.ConnectionString);
 
+                string containerName = request.ContainerName;
+
+                if (string.IsNullOrEmpty(containerName))
+                {
+                    throw new ContainerNameNotSpecifiedException(string.Format("TRequest object does not have a ContainerName specified in {0}", this.GetType()));
+                }
+
+                string blobPath = request.BlobPath;
+                if (string.IsNullOrEmpty(blobPath))
+                {
+                    throw new BlobPathNotSpecifiedException(string.Format("TRequest object does not have a BlobPath specified in {0}", this.GetType()));
+                }
+
                 if (typeof(TRequest).GetTypeInfo().GetDeclaredMethod("AddBlobServiceClient") != null)
                 {
                     request.AddBlobServiceClient(blobServiceClient);
                 }
-
-                string containerName = request.ContainerName;
 
                 BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
 
