@@ -17,7 +17,7 @@ var connectionString = "{SET CONNECTION STRING HERE}";
 var containerName = "{SET CONTAINER NAME HERE}";
 var blobPath = "{SET BLOB NAME HERE}";
 
-var blobManager = new Yatter.Storage.Azure.BlobManager();
+var blobManager = new Yatter.Storage.Azure.ResponsiveBlobManager();
 
 var blobRequest = new Models.BlobRequest();
 blobRequest.SetConnectionString(connectionString);
