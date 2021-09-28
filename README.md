@@ -1,5 +1,11 @@
 # Yatter.Storage.Azure
 
+Our BlobManager uses a ```TRequest``` / ```TResponse``` pattern, vis-a-vis:
+
+```
+var response = await blobManager.GetBlobAsync<BlobResponse, BlobRequest>(blobRequest);
+```
+
 ## Quickstart
 
 ```
