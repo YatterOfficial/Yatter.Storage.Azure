@@ -17,14 +17,14 @@ var connectionString = "{SET CONNECTION STRING HERE}";
 var containerName = "{SET CONTAINER NAME HERE}";
 var blobPath = "{SET BLOB NAME HERE}";
 
-var blobManager = new Yatter.Storage.Azure.ResponsiveBlobManager();
+var responsiveBlobManager = new Yatter.Storage.Azure.ResponsiveBlobManager();
 
 var blobRequest = new Models.BlobRequest();
 blobRequest.SetConnectionString(connectionString);
 blobRequest.SetContainerName(containerName);
 blobRequest.SetBlobPath(blobPath);
 
-var response = await blobManager.GetBlobAsync<BlobResponse, BlobRequest>(blobRequest);
+var response = await responsiveBlobManager.GetBlobAsync<BlobResponse, BlobRequest>(blobRequest);
 
 var isSuccess = response.IsSuccess;
 var message = response.Message;
