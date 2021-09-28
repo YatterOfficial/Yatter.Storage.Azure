@@ -3,7 +3,7 @@
 Our ResponsiveBlobManager uses a ```TRequest``` / ```TResponse``` pattern, vis-a-vis:
 
 ```
-var response = await blobManager.GetBlobAsync<BlobResponse, BlobRequest>(blobRequest);
+var response = await responsiveBlobManager.GetBlobAsync<BlobResponse, BlobRequest>(blobRequest);
 ```
 
 Where BlobRequest and BlobResponse are implementations of [RequestBase](https://github.com/HarrisonOfTheNorth/Yatter.Storage.Azure/blob/main/Yatter.Storage.Azure/RequestBase.cs) and [ResponseBase](https://github.com/HarrisonOfTheNorth/Yatter.Storage.Azure/blob/main/Yatter.Storage.Azure/ResponseBase.cs), respectively.
