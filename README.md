@@ -34,7 +34,7 @@ var blobContent = response.Content;
 A minimal BlobResponse example from above is:
 
 ```
-    public class BlobResponse : ResponseBase
+    public sealed class BlobResponse : ResponseBase
     {
         public BlobResponse()
         {
