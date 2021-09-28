@@ -86,6 +86,7 @@ Advanced Example of TResponse Access to Underlying Azure objects
 
         public override void AddBlobDownloadResult(BlobDownloadResult blobDownloadResult)
         {
+            // Do something with blobDownloadResult here!
             base.AddBlobDownloadResult(blobDownloadResult);
         }
     }
