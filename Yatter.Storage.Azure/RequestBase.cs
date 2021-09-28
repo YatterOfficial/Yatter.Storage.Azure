@@ -18,15 +18,20 @@ namespace Yatter.Storage.Azure
         /// </summary>
         public string BlobPath { get; protected set; }
         /// <summary>
+        /// Override to access the internal BlobClient
+        /// </summary>
+        /// <param name="client">Azure.Storage.Blobs.BlobClient</param>
+        public virtual void AddBlobClient(BlobClient client) { }
+        /// <summary>
+        /// Override to access the internal BlobServiceClient
+        /// </summary>
+        /// <param name="client">Azure.Storage.Blobs.BlobServiceClient</param>
+        public virtual void AddBlobServiceClient(BlobServiceClient client) { }
+        /// <summary>
         /// Override to access the internal BlobContainerClient
         /// </summary>
-        public virtual void AddBlobClient(BlobClient client) { }
-
-        public virtual void AddBlobServiceClient(BlobServiceClient client) { }
-
+        /// <param name="client">BlobContainerClient</param>
         public virtual void AddBlobContainerClient(BlobContainerClient client) { }
-
-
     }
 }
 
