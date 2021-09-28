@@ -1,6 +1,6 @@
 # Yatter.Storage.Azure
 
-Our ResponsiveBlobManager uses a ```TRequest``` / ```TResponse``` pattern, vis-a-vis:
+Our **ResponsiveBlobManager** uses a ```TRequest``` / ```TResponse``` pattern, vis-a-vis:
 
 ```
 var response = await responsiveBlobManager.GetBlobAsync<BlobResponse, BlobRequest>(blobRequest);
