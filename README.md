@@ -8,6 +8,8 @@ var response = await blobManager.GetBlobAsync<BlobResponse, BlobRequest>(blobReq
 
 Where BlobRequest and BlobResponse are implementations of [RequestBase](https://github.com/HarrisonOfTheNorth/Yatter.Storage.Azure/blob/main/Yatter.Storage.Azure/RequestBase.cs) and [ResponseBase](https://github.com/HarrisonOfTheNorth/Yatter.Storage.Azure/blob/main/Yatter.Storage.Azure/ResponseBase.cs), respectively.
 
+Both base objects expose the underlying objects so that any advanced work can be done in the base overrides.
+
 ## Quickstart
 
 ```
