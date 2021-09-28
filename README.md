@@ -31,7 +31,18 @@ var message = response.Message;
 var blobContent = response.Content;
 ```
 
-A minimal BlobResponse example from above is:
+Methods:
+
+- GetBlobAsync
+- UploadBlobAsync
+- ExistsBlobAsync
+- DeleteBlobAsync
+
+Limitations:
+
+- None, the Azure objects are exposed in the TRequest and TResponse base classes.
+
+Minimal Example TResponse class
 
 ```
     public sealed class BlobResponse : ResponseBase
@@ -42,7 +53,7 @@ A minimal BlobResponse example from above is:
     }
 ```
 
-A minimal BlobRequest example from above is:
+Minimal example TRequest class
 
 ```
     public sealed class BlobRequest : RequestBase
