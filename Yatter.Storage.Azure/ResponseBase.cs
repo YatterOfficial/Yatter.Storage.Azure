@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Net;
 using Azure.Storage.Blobs.Models;
+using Yatter.Invigoration;
 
 namespace Yatter.Storage.Azure
 {
-    public abstract class ResponseBase
+    public abstract class ResponseBase : IOutcome
     {
         /// <summary>
         /// The content of the blob that has been retrieved

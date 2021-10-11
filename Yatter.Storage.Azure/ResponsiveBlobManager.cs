@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
+using Newtonsoft.Json;
 using Yatter.Storage.Azure.Exceptions;
 
 namespace Yatter.Storage.Azure
@@ -174,6 +175,8 @@ namespace Yatter.Storage.Azure
                         var uploadResponse = await blobClient.UploadAsync(new BinaryData(request.BlobContent));
 
                         response.IsSuccess = true;
+
+                        response.Message = $"IResponsiveBlobManager reports that it succesfully uploaded content of content-length {request.BlobContent.Length} to {request.BlobPath}";
                     }
                     catch(Exception ex)
                     {
@@ -335,12 +338,12 @@ namespace Yatter.Storage.Azure
                 if (blobExists)
                 {
                     response.IsSuccess = true;
-                    response.Message = "Exists";
+                    response.Message = JsonConvert.SerializeObject(new ExistsResponse { Exists = true });
                 }
                 else
                 {
                     response.IsSuccess = true;
-                    response.Message = "Does Not Exist";
+                    response.Message = JsonConvert.SerializeObject(new ExistsResponse { Exists = false });
                 }
             }
             catch (Exception ex)

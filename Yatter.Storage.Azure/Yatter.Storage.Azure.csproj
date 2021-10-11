@@ -2,6 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageVersion>0.0.6</PackageVersion>
+    <Authors>Anthony Harrison</Authors>
+    <Description>A BlobManager for Azure Storage</Description>
+    <Copyright>Anthony Harrison</Copyright>
+    <Owners>Anthony Harrison</Owners>
+    <Summary>An Azure BlobManager using a TRequest / TResponse pattern</Summary>
+    <Title>Yatter.Storage.Azure</Title>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageIconUrl>https://avatars.githubusercontent.com/u/25448533</PackageIconUrl>
+    <NeutralLanguage>en-GB</NeutralLanguage>
+    <PackageLicenseUrl>https://github.com/HarrisonOfTheNorth/Yatter.Storage.Azure/blob/main/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/HarrisonOfTheNorth/Yatter.Storage.Azure</PackageProjectUrl>
+    <PackageReleaseNotes>Alpha Release</PackageReleaseNotes>
+    <PackageTags>Yatter, Azure, BlobManager, TRequest, TResponse</PackageTags>
+    <PackageId>Yatter.Storage.Azure</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,11 +26,13 @@
     <None Remove="Azure.Core" />
     <None Remove="Microsoft.Azure.Storage.Blob" />
     <None Remove="Exceptions\" />
+    <None Remove="Yatter.Invigoration" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.2.3" />
     <PackageReference Include="Azure.Storage.Blobs" Version="12.10.0" />
+    <PackageReference Include="Yatter.Invigoration" Version="0.3.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Exceptions\" />
