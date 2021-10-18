@@ -1,5 +1,11 @@
 # Yatter.Storage.Azure
 
+<a href="https://www.nuget.org/packages/Yatter.Storage.Azure/" target="_blank" rel="noreferrer noopener"><img alt="Nuget" src="https://img.shields.io/nuget/v/Yatter.Storage.Azure?color=blue&style=for-the-badge"></a>
+
+![GitHub](https://img.shields.io/github/license/yatterofficial/Yatter.Storage.Azure?style=for-the-badge)
+
+[![Yatter.Storage.Azure on fuget.org](https://www.fuget.org/packages/Yatter.Storage.Azure/badge.svg)](https://www.fuget.org/packages/Yatter.Storage.Azure)
+
 Our **ResponsiveBlobManager** uses a ```TRequest``` / ```TResponse``` pattern, vis-a-vis:
 
 ```
